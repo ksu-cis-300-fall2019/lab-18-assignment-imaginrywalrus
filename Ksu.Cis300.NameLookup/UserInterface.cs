@@ -95,5 +95,25 @@ namespace Ksu.Cis300.NameLookup
                 uxRank.Text = "";
             }
         }
+
+        /// <summary>
+        /// Handels a Click event on the "remove" button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UxRemove_Click(object sender, EventArgs e)
+        {
+            string name = uxName.Text.Trim().ToUpper();
+            if (_nameInformation.Remove(name))
+            {
+                _nameInformation.Drawing.Show();
+            }
+            else
+            {
+                MessageBox.Show("Name not found.");
+            }
+            uxFrequency.Text = "";
+            uxRank.Text = "";
+        }
     }
 }
